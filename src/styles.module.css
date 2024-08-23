@@ -1,8 +1,117 @@
 :root {
-    --gray-10: #fefefe;
-    --gray-20: #eee;
+    --gray-light: #F3F3F3;
+    --gray-lighter: #FEFEFE;
+    --gray-normal: #63656e;
+    --gray-dark: #2d2c2f;
+    --primary: #1221f3;
     --white: white;
     --space: 0.4rem;
+    --size: 0.4rem;
+    --font-size: 1rem;
     --font-percent: 62.5%;
-    --font-size: 1.6rem;
+    --border-radius: 0.2rem;
+}
+
+@font-face {
+    font-family: Inter;
+    font-weight: 400;
+    src: url('./assets/fonts/Inter-Regular.woff2');
+}
+
+@font-face {
+    font-family: Inter;
+    font-weight: 500;
+    src: url('./assets/fonts/Inter-Medium.woff2');
+}
+
+@font-face {
+    font-family: Inter;
+    font-weight: 600;
+    src: url('./assets/fonts/Inter-SemiBold.woff2');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-weight: 400;
+    color: var(--gray-dark);
+    font-family: Inter, sans-serif;
+    font-size: var(--font-percent);
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    padding: calc(var(--space) * 3);
+}
+
+.box {
+    width: 100%;
+    max-width: calc(var(--size) * 105);
+    margin: 0 auto;
+}
+
+.cards {
+    display: flex;
+    gap: calc(var(--space) * 1.5);
+    background-color: var(--white);
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--space) * 1.2);
+    flex-basis: 50%;
+    border-radius: calc(var(--border-radius) * 6);
+    background: linear-gradient(var(--gray-light), var(--gray-lighter));
+    height: calc(var(--size) * 62);
+    padding: calc(var(--space) * 1.2);
+    overflow: hidden;
+}
+
+.content {
+    border-bottom-left-radius: calc(var(--border-radius) * 12);
+    border-bottom-right-radius: calc(var(--border-radius) * 12);
+    background : linear-gradient(var(--gray-lighter), var(--gray-light));
+    padding: calc(var(--space) * 8) calc(var(--space) * 8) calc(var(--space) * 1.5);
+}
+
+.content .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: calc(var(--space) * 6);
+}
+
+.content .header .badge {
+    display: flex;
+    gap: var(--space);
+    align-items: center;
+    font-weight: 500;
+    font-size: calc(var(--font-size) * 1.4);
+    color: var(--gray-normal);
+}
+
+.content .header .badge svg {
+    width: calc(var(--size) * 4);
+    height: calc(var(--size) * 4);
+}
+
+.content .header .title {
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.content .lead {
+    font-weight: 500;
+    color: var(--gray-dark);
+    font-size: calc(var(--font-size) * 1.4);
+    line-height: calc(var(--font-size) * 2);
+    margin-bottom: calc(var(--space) * 6);
 }
