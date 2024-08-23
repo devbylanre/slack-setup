@@ -59,8 +59,15 @@ html {
 
 .cards {
     display: flex;
+    flex-direction: column;
     gap: calc(var(--space) * 1.5);
     background-color: var(--white);
+}
+
+@media (min-width: 1024px) {
+    .cards {
+        flex-direction: row;
+    }
 }
 
 .card {
@@ -70,6 +77,7 @@ html {
     flex-basis: 50%;
     border-radius: calc(var(--border-radius) * 6);
     background: linear-gradient(var(--gray-light), var(--gray-lighter));
+    min-height: calc(var(--size) * 60);
     height: calc(var(--size) * 62);
     padding: calc(var(--space) * 1.2);
     overflow: hidden;
