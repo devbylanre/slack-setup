@@ -1,19 +1,100 @@
 import React from 'react';
 import Styles from './styles.module.css';
-import TrelloCard from './components/trello/Card';
+import Trello from './templates/Trello';
+import Branding from './templates/Branding';
+import Backlog from './templates/Backlog';
+import Active from './templates/Active';
+import Completed from './templates/Completed';
+import { motion, AnimatePresence } from 'framer-motion';
+import useTimeout from './hooks/useTimeout';
+import Slack from './templates/Slack';
+import Chat from './templates/Chat';
 
 function App() {
+  const { isVisible } = useTimeout({ duration: 5000, resetAfter: 2000 });
+
+  const firstCardComponents = [
+    <Trello />,
+    <Branding />,
+    <Backlog />,
+    <Active />,
+    <Completed />,
+  ];
+
+  const secondCardComponents = [<Slack />, <Chat />];
+
   return (
     <main>
       <div className={Styles.container}>
         <div className={Styles.box}>
           <div className={Styles.cards}>
             {/* first inner box */}
-            <div className={Styles.card}>
-              <TrelloCard />
-            </div>
+            <motion.div className={Styles.card}>
+              <AnimatePresence>
+                {isVisible &&
+                  firstCardComponents.map((component, index) => {
+                    return (
+                      <motion.div
+                        key={index}
+                        initial={{ y: 400 }}
+                        exit={{ opacity: [1, 0.5, 0.25, 0], x: [0, 4, 8, 12] }}
+                        animate={{ y: [400, 0, 8, 0] }}
+                        transition={{
+                          y: {
+                            delay: index * 0.3,
+                            duration: 0.5,
+                            ease: 'easeOut',
+                          },
+                          x: { delay: index * 0.3, duration: 0.5 },
+                          opacity: { delay: index * 0.3, duration: 0.5 },
+                        }}
+                      >
+                        {component}
+                      </motion.div>
+                    );
+                  })}
+              </AnimatePresence>
+            </motion.div>
             {/* second inner box */}
-            <div className={Styles.card}></div>
+            <motion.div className={Styles.card}>
+              <AnimatePresence>
+                {isVisible &&
+                  secondCardComponents.map((component, index) => {
+                    return (
+                      <motion.div
+                        key={index}
+                        initial={{ y: 400 }}
+                        exit={
+                          index === 0
+                            ? {
+                                opacity: [1, 0.5, 0.25, 0],
+                                x: [0, -4, -8, -12],
+                              }
+                            : {
+                                opacity: [1, 0.5, 0.25, 0],
+                                y: [0, -4, -8, -12],
+                              }
+                        }
+                        animate={{ y: [400, 0, 8, 0] }}
+                        transition={{
+                          y: {
+                            delay: (index + 1) * 0.5,
+                            duration: 0.5,
+                            ease: 'easeOut',
+                          },
+                          x: { delay: (index + 1) * 0.5, duration: 0.5 },
+                          opacity: {
+                            delay: (index + 1) * 0.5,
+                            duration: 0.5,
+                          },
+                        }}
+                      >
+                        {component}
+                      </motion.div>
+                    );
+                  })}
+              </AnimatePresence>
+            </motion.div>
           </div>
           <div className={Styles.content}>
             {/* title and badge */}
