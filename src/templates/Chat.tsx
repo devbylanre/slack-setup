@@ -24,7 +24,7 @@ const Chat = () => {
             fontWeight: 500,
           }}
         >
-          #ModuleInc
+          #Facebookteam
         </motion.h6>
 
         <motion.div
