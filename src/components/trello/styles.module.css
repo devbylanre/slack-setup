@@ -1,0 +1,14 @@
+.card {
+    width: 100%;
+    height: calc(var(--size) * 9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border-radius: calc(var(--border-radius) * 4);
+}
+
+.card svg {
+    width: calc(var(--size) * 6);
+    height: calc(var(--size) * 6);
+}
