@@ -1,0 +1,11 @@
+.card {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: calc(var(--space) * 2);
+    justify-content: center;
+    background-color: white;
+    border-radius: calc(var(--border-radius) * 4);
+    padding: calc(var(--space) * 1.5) calc(var(--space) * 1.5);
+}
+
