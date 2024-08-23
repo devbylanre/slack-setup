@@ -11,7 +11,7 @@ import Slack from './templates/Slack';
 import Chat from './templates/Chat';
 
 function App() {
-  const { isVisible } = useTimeout({ duration: 5000, resetAfter: 2000 });
+  const { isVisible } = useTimeout({ duration: 5000, resetAfter: 3000 });
 
   const firstCardComponents = [
     <Trello />,
@@ -36,12 +36,12 @@ function App() {
                     return (
                       <motion.div
                         key={index}
-                        initial={{ y: 400 }}
+                        initial={{ y: 240 }}
                         exit={{ opacity: [1, 0.5, 0.25, 0], x: [0, 4, 8, 12] }}
-                        animate={{ y: [400, 0, 8, 0] }}
+                        animate={{ y: [240, 0, 8, 0] }}
                         transition={{
                           y: {
-                            delay: index * 0.3,
+                            delay: (index + 0.3) * 0.3,
                             duration: 0.5,
                             ease: 'easeOut',
                           },
@@ -63,7 +63,7 @@ function App() {
                     return (
                       <motion.div
                         key={index}
-                        initial={{ y: 400 }}
+                        initial={{ y: 240 }}
                         exit={
                           index === 0
                             ? {
@@ -75,7 +75,7 @@ function App() {
                                 y: [0, -4, -8, -12],
                               }
                         }
-                        animate={{ y: [400, 0, 8, 0] }}
+                        animate={{ y: [240, 0, 8, 0] }}
                         transition={{
                           y: {
                             delay: (index + 1) * 0.5,
