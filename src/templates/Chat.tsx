@@ -13,7 +13,7 @@ const Chat = () => {
           overflow: 'hidden',
         }}
       >
-        <motion.h6
+        <motion.h4
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ opacity: { delay: 1, duration: 0.5 } }}
@@ -25,7 +25,7 @@ const Chat = () => {
           }}
         >
           #Facebookteam
-        </motion.h6>
+        </motion.h4>
 
         <motion.div
           animate={{ scaleX: [0.9, 1], opacity: [0, 1] }}
@@ -46,7 +46,7 @@ const Chat = () => {
             src='/assets/images/userOne.png'
             style={{ width: '24px', height: '24px', borderRadius: '999rem' }}
           />
-          <h6 style={{ fontSize: '1.2rem', fontWeight: 600 }}>Matt @meta</h6>
+          <h4 style={{ fontSize: '1.2rem', fontWeight: 600 }}>Matt @meta</h4>
           <p style={{ fontSize: '1.2rem' }}>10: 43 AM</p>
         </motion.div>
 
@@ -99,7 +99,7 @@ const Chat = () => {
             src='/assets/images/userTwo.png'
             style={{ width: '24px', height: '24px', borderRadius: '999rem' }}
           />
-          <h6 style={{ fontSize: '1.2rem', fontWeight: 600 }}>Elisa Wood</h6>
+          <h4 style={{ fontSize: '1.2rem', fontWeight: 600 }}>Elisa Wood</h4>
           <p style={{ fontSize: '1.2rem' }}>11: 23 AM</p>
         </motion.div>
 
