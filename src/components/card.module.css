@@ -9,3 +9,21 @@
     padding: calc(var(--space) * 1.5) calc(var(--space) * 1.5);
 }
 
+.card svg {
+    width: 20px;
+    height: 20px;
+}
+
+.card h6 {
+    display: none;
+    flex: 1 1 0%;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+
+@media (min-width: 768px) {
+    .card h6 {
+        display: block;
+    }
+}
