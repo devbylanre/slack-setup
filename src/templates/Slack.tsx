@@ -10,7 +10,6 @@ const Slack = () => {
         viewBox='0 0 54 54'
         xmlns='http://www.w3.org/2000/svg'
         role='presentation'
-        style={{ width: '20px', height: '20px' }}
       >
         <title>Slack</title>
         <g
