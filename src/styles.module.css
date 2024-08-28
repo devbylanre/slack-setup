@@ -40,6 +40,7 @@ html {
     font-weight: 400;
     color: var(--gray-dark);
     font-family: Inter, sans-serif;
+    letter-spacing: -0.03rem;
     font-size: var(--font-percent);
 }
 
@@ -59,28 +60,34 @@ html {
 
 .cards {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: calc(var(--space) * 1.5);
     background-color: var(--white);
-}
-
-@media (min-width: 1024px) {
-    .cards {
-        flex-direction: row;
-    }
 }
 
 .card {
     display: flex;
     flex-direction: column;
     gap: calc(var(--space) * 1.2);
-    flex-basis: 50%;
+    width: 100%;
     border-radius: calc(var(--border-radius) * 6);
     background: linear-gradient(var(--gray-light), var(--gray-lighter));
     min-height: calc(var(--size) * 60);
-    height: calc(var(--size) * 62);
+    height: calc(var(--size) * 61);
     padding: calc(var(--space) * 1.2);
     overflow: hidden;
+}
+
+.cards .card:nth-child(1) {
+    width: fit-content;
+    min-width: 40px;
+}
+
+
+@media (min-width: 768px) {
+    .cards .card:nth-child(1) {
+        width: 100%;
+    }
 }
 
 .content {
